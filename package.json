@@ -1,6 +1,7 @@
 {
   "name": "hqstock-app",
   "version": "0.1.0",
+  "homepage": "https://miroxbeno.github.io/hqstock-app",
   "private": true,
   "dependencies": {
     "@types/enzyme": "^3.1.15",
@@ -14,6 +15,7 @@
     "@types/react-plotly.js": "^2.2.2",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.8.0",
+    "gh-pages": "^2.0.1",
     "jest-canvas-mock": "^1.1.1-beta.1",
     "jest-date-mock": "^1.0.7",
     "jest-enzyme": "^7.0.1",
@@ -35,7 +37,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"  
   },
   "eslintConfig": {
     "extends": "react-app"
