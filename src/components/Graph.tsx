@@ -26,7 +26,8 @@ const Graph = (props: IGraphProps) => {
           ]}
           layout={{ 
             width: graphWidth,            
-            height: graphHeight,     
+            height: graphHeight,   
+            margin: { l: 60, r: 30, b: 80, t: 120, pad: 5 },
             title: (datasetNameShortened || ""),
             font: { family: `"Helvetica Neue","Helvetica Neue HQ",Helvetica,Arial,sans-serif`, size: 15 }
           }}
