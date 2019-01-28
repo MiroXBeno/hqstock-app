@@ -9,6 +9,10 @@ export interface IGraphProps {
 }
 
 const Graph = (props: IGraphProps) => {
+    let datasetNameShortened = props.datasetName && props.datasetName.split("(")[0].trim();
+    let graphWidth = document.documentElement.clientWidth - 20;  
+    let graphHeight = (document.documentElement.clientHeight / 4 * 3);
+    
     return (
         <Plot
           data={[
@@ -21,9 +25,9 @@ const Graph = (props: IGraphProps) => {
             }
           ]}
           layout={{ 
-            width: window.innerWidth - 20,            // TODO: replace with better configuration
-            height: (window.innerHeight / 4 * 3),     
-            title: (props.datasetName || "N/A") + " - Adjusted closed prices",
+            width: graphWidth,            
+            height: graphHeight,     
+            title: (datasetNameShortened || ""),
             font: { family: `"Helvetica Neue","Helvetica Neue HQ",Helvetica,Arial,sans-serif`, size: 15 }
           }}
         />
