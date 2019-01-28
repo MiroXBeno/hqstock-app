@@ -1,0 +1,22 @@
+.kpis {
+    margin: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .kpis__box {
+    text-align: center;
+    margin: 1rem 2.5rem 0 2.5rem;
+  }
+  
+  .kpis__label {
+    font-size: 1.3em;
+  }
+  
+  .kpis__value {
+    font-size: 1.5em;
+  }
+  
