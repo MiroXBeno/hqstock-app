@@ -16,7 +16,7 @@ interface IHeaderState {
 export default class Header extends React.PureComponent<IHeaderProps, IHeaderState> {
     state: IHeaderState = {
         stockSymbol: "HD",
-        startDate: "2018-01-01"        
+        startDate: "2016-01-01"        
     };
 
     loaderRef = React.createRef<HTMLImageElement>();
@@ -53,6 +53,7 @@ export default class Header extends React.PureComponent<IHeaderProps, IHeaderSta
                             type="text"
                             value={this.state.stockSymbol}
                             onChange={e => this.setState({ stockSymbol: e.target.value })}
+                            placeholder="try HD, MSFT, AAPL, ..."
                         />
                     </div>
                     <div className="form__box">

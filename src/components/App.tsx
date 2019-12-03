@@ -36,9 +36,13 @@ class App extends Component<{}, IAppState> {
   }
 
   saveApiData = (apiData: IQuandlSuccessResponse & IQuandlErrorResponse) => {
-    if (!apiData || !apiData.dataset || !apiData.dataset.column_names || !apiData.dataset.data || apiData.dataset.data.length == 0) {
+    if (!apiData || !apiData.dataset || !apiData.dataset.column_names || !apiData.dataset.data) {
         this.handleError(apiData && apiData.quandl_error && apiData.quandl_error.message || "Invalid data received");
         return;
+    }
+    if (apiData.dataset.data.length == 0) {
+      this.handleError("No data received");
+      return;
     }
     this.setState({dataset: apiData.dataset, loading: false});
   }  
@@ -84,7 +88,7 @@ class App extends Component<{}, IAppState> {
         <Graph stockValues={adjCloseValues} dateValues={dateValues} datasetName={this.state.dataset && this.state.dataset.name}/>
         <KPIs stockValues={adjCloseValues} />        
         <footer>
-          Copyright © 2019 HQ Trust, Miroslav Beno
+          Copyright © 2019 Miroslav Beno
         </footer>
         <NotificationContainer />
       </div>
