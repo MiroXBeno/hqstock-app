@@ -22,7 +22,7 @@
     "jest-fetch-mock": "^2.1.0",
     "memoize-one": "^5.0.0",
     "normalize.css": "^8.0.1",
-    "plotly.js": "^1.44.1",
+    "plotly.js": "^2.25.2",
     "portfolio-analytics": "0.0.4",
     "react": "^16.7.0",
     "react-app-polyfill": "^0.2.0",
